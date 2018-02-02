@@ -1,0 +1,12 @@
+//Format <image>, one per line
+Snake Background.png
+Serpent Head Up.png
+Serpent Head Right.png
+Serpent Head Down.png
+Serpent Head Left.png
+Serpent Body.png
+Serpent Tail Up.png
+Serpent Tail Right.png
+Serpent Tail Down.png
+Serpent Tail Left.png
+Apple.png
