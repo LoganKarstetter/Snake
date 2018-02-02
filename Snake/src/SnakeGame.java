@@ -98,11 +98,33 @@ public class SnakeGame extends JFrame implements WindowListener
     }
 
     /**
-     * Launches a game of SnakeGame.
-     * @param args Command line arguments are not used.
+     * Launches a game of Snake. A single integer value can be specified as a command line argument to
+     * set the FPS for the game. If no value is provided it will run at the default FPS (6).
+     * @param args An integer specifying the requested FPS.
      */
     public static void main(String[] args)
     {
-        new SnakeGame(DEFAULT_FPS);
+        //Check for command line arguments
+        if (args.length > 0)
+        {
+            //Cast the first argument to an integer
+            try
+            {
+                //Start a game with the requested FPS
+                int FPS = Integer.valueOf(args[0]);
+                System.out.println("Running Snake with FPS: " + FPS);
+                new SnakeGame(FPS);
+            }
+            catch (Exception e) //Horrible practice, but error catching isn't useful here
+            {
+                System.out.println("Unable to set requested FPS value: " + args[0] + "\nPlease enter only integers.  Exiting...");
+                System.exit(0);
+            }
+        }
+        else //Use the default FPS
+        {
+            System.out.println("Running Snake with default FPS: " + DEFAULT_FPS);
+            new SnakeGame(DEFAULT_FPS);
+        }
     }
 }

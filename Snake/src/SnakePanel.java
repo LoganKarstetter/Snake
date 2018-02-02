@@ -251,11 +251,17 @@ public class SnakePanel extends JPanel implements Runnable
     private void gameUpdate()
     {
         //If the game is not over or paused, update
-        if (!gameOver && !isPaused)
+        if (!gameOver)
         {
-            //Update the game
-            fruit.update(); //Update the fruit first, if it is eaten the snake will grow 'naturally'
-            snake.update();
+            //Update the fruit first, if it is eaten the snake will appear to grow more 'naturally'
+            fruit.update();
+
+            //Only update the snake if the game is not paused
+            if (!isPaused)
+            {
+                snake.update();
+            }
+
         }
     }
 
