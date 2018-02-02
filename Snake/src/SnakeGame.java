@@ -28,9 +28,10 @@ public class SnakeGame extends JFrame implements WindowListener
 
         //Add a window listener to handle pausing
         addWindowListener(this);
-        pack();
         setResizable(false);
         setVisible(true);
+        pack();
+        setLocationRelativeTo(null);
     }
 
     /**
